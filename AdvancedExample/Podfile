@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'AdvancedExample' do
+  pod 'HeadsAppSDK', :path => '../'
+end

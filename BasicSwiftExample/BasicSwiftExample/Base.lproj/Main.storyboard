@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BasicSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-nc-NxF">
+                                <rect key="frame" x="233" y="40" width="134" height="30"/>
+                                <state key="normal" title="Request banner ad ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestBannerAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xS4-Bv-asG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk3-Tw-GBc">
+                                <rect key="frame" x="226" y="78" width="149" height="30"/>
+                                <state key="normal" title="Request interstitial ad"/>
+                                <connections>
+                                    <action selector="requestInterstitialAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4WO-uc-8rw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-Mq-IH2">
+                                <rect key="frame" x="241" y="116" width="119" height="30"/>
+                                <state key="normal" title="Request video ad"/>
+                                <connections>
+                                    <action selector="requestVideoAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RN3-dk-4gS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pk3-Tw-GBc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7L-Oe-DRt"/>
+                            <constraint firstItem="Dsy-Mq-IH2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FGA-XC-RgN"/>
+                            <constraint firstItem="Dsy-Mq-IH2" firstAttribute="top" secondItem="pk3-Tw-GBc" secondAttribute="bottom" constant="8" id="N5Q-7T-PCd"/>
+                            <constraint firstItem="pk3-Tw-GBc" firstAttribute="top" secondItem="3bs-nc-NxF" secondAttribute="bottom" constant="8" id="SXz-uW-az5"/>
+                            <constraint firstAttribute="centerX" secondItem="3bs-nc-NxF" secondAttribute="centerX" id="VJy-4A-Jig"/>
+                            <constraint firstItem="3bs-nc-NxF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="zaa-y1-6LQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

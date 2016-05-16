@@ -1,0 +1,6 @@
+framework module HeadsAppSDK {
+  umbrella header "HeadsAppSDK.h"
+
+  export *
+  module * { export * }
+}

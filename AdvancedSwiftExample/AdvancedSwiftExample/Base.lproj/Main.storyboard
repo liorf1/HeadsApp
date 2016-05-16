@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xhk-Wb-03k">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="T4o-Td-kun">
+            <objects>
+                <navigationController id="Xhk-Wb-03k" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oh9-XE-MCg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q04-OW-zZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Deu-1B-7eN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.5" y="-348.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AdvancedSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJq-pW-SDO">
+                                <rect key="frame" x="121" y="84" width="133" height="30"/>
+                                <state key="normal" title="Request banner AD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestBannerAd1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIz-2P-WCO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pk3-Tw-GBc">
+                                <rect key="frame" x="112" y="122" width="152" height="30"/>
+                                <state key="normal" title="Request interstitial AD"/>
+                                <connections>
+                                    <action selector="requestInterstitialAd1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGg-aA-8Ts"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-Ef-iJJ">
+                                <rect key="frame" x="0.0" y="0.0" width="172" height="30"/>
+                                <state key="normal" title="Request AdMob video ad"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-Mq-IH2">
+                                <rect key="frame" x="126" y="160" width="123" height="30"/>
+                                <state key="normal" title="Request video AD"/>
+                                <connections>
+                                    <action selector="requestVideoAd1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1e-lU-Zad"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo7-rj-nqq">
+                                <rect key="frame" x="67" y="198" width="242" height="30"/>
+                                <state key="normal" title="Request Vungle rewarded video AD"/>
+                                <connections>
+                                    <action selector="requestVungleRewardedVideoAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ztg-Bh-ucd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBf-gp-1Zo">
+                                <rect key="frame" x="127" y="319" width="121" height="30"/>
+                                <state key="normal" title="Open next screen"/>
+                                <connections>
+                                    <segue destination="dwK-2c-r94" kind="show" id="jQt-FM-Hay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOZ-cN-Qfh">
+                                <rect key="frame" x="57" y="236" width="261" height="30"/>
+                                <state key="normal" title="Request AdColony rewarded video AD"/>
+                                <connections>
+                                    <action selector="requestAdColonyRewardedVideoAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynI-cG-7iv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iJq-pW-SDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Nu-Hq-pSO"/>
+                            <constraint firstItem="VOZ-cN-Qfh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9M4-k5-JAo"/>
+                            <constraint firstItem="pk3-Tw-GBc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7L-Oe-DRt"/>
+                            <constraint firstItem="Dsy-Mq-IH2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FGA-XC-RgN"/>
+                            <constraint firstItem="pk3-Tw-GBc" firstAttribute="top" secondItem="iJq-pW-SDO" secondAttribute="bottom" constant="8" id="Ieh-h8-NiG"/>
+                            <constraint firstItem="Dsy-Mq-IH2" firstAttribute="top" secondItem="pk3-Tw-GBc" secondAttribute="bottom" constant="8" id="N5Q-7T-PCd"/>
+                            <constraint firstItem="iJq-pW-SDO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Uuh-j1-Mro"/>
+                            <constraint firstItem="Fo7-rj-nqq" firstAttribute="top" secondItem="Dsy-Mq-IH2" secondAttribute="bottom" constant="8" id="bQz-HC-ALb"/>
+                            <constraint firstItem="MBf-gp-1Zo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mBW-1J-UgF"/>
+                            <constraint firstItem="Fo7-rj-nqq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pYL-wK-DJK"/>
+                            <constraint firstItem="MBf-gp-1Zo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sQn-dN-ejX"/>
+                            <constraint firstItem="VOZ-cN-Qfh" firstAttribute="top" secondItem="Fo7-rj-nqq" secondAttribute="bottom" constant="8" id="zuS-gY-PPW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Vs-bW-RlF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="adColonyRewardedVideoAdButton" destination="VOZ-cN-Qfh" id="ugJ-Na-TW3"/>
+                        <outlet property="bannerAdButton1" destination="iJq-pW-SDO" id="uYY-cQ-Reb"/>
+                        <outlet property="interstitialAdButton1" destination="pk3-Tw-GBc" id="N5j-OL-2Tl"/>
+                        <outlet property="videoAdButton1" destination="Dsy-Mq-IH2" id="vvy-Rs-Vqd"/>
+                        <outlet property="vungleRewardedVideoAdButton" destination="Fo7-rj-nqq" id="Rdb-md-87m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342.5" y="-348.5"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="R8U-hr-098">
+            <objects>
+                <viewController id="dwK-2c-r94" customClass="ViewController2" customModule="AdvancedSwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SNW-Qg-fGp"/>
+                        <viewControllerLayoutGuide type="bottom" id="cJ8-C2-iBy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wvM-yo-OPc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtW-Xh-nTF">
+                                <rect key="frame" x="121" y="76" width="133" height="30"/>
+                                <state key="normal" title="Request banner AD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestBannerAd2:" destination="dwK-2c-r94" eventType="touchUpInside" id="JOv-Wl-Avl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZQ-q0-EAV">
+                                <rect key="frame" x="113" y="114" width="149" height="30"/>
+                                <state key="normal" title="Request interstital AD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestInterstitialAd2:" destination="dwK-2c-r94" eventType="touchUpInside" id="DKh-mg-hOj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz5-A9-1VX">
+                                <rect key="frame" x="126" y="152" width="123" height="30"/>
+                                <state key="normal" title="Request video AD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestVideoAd2:" destination="dwK-2c-r94" eventType="touchUpInside" id="dcv-7Q-41c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Cz5-A9-1VX" secondAttribute="centerX" id="0C7-w5-z4T"/>
+                            <constraint firstItem="WZQ-q0-EAV" firstAttribute="top" secondItem="UtW-Xh-nTF" secondAttribute="bottom" constant="8" id="AaH-La-toX"/>
+                            <constraint firstAttribute="centerX" secondItem="WZQ-q0-EAV" secondAttribute="centerX" id="f0h-cJ-DmC"/>
+                            <constraint firstAttribute="centerX" secondItem="UtW-Xh-nTF" secondAttribute="centerX" id="fju-pK-N1O"/>
+                            <constraint firstItem="UtW-Xh-nTF" firstAttribute="topMargin" secondItem="SNW-Qg-fGp" secondAttribute="bottom" constant="20" id="gAn-YB-O47"/>
+                            <constraint firstItem="Cz5-A9-1VX" firstAttribute="top" secondItem="WZQ-q0-EAV" secondAttribute="bottom" constant="8" id="ykf-eV-cBo"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bannerAdButton2" destination="UtW-Xh-nTF" id="LSX-iH-Nv6"/>
+                        <outlet property="interstitialAdButton2" destination="WZQ-q0-EAV" id="Dxq-Us-YOI"/>
+                        <outlet property="videoAdButton2" destination="Cz5-A9-1VX" id="Cm3-nI-oSC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDw-65-uSw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785.5" y="-348.5"/>
+        </scene>
+    </scenes>
+</document>
