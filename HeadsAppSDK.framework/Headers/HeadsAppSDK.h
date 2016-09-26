@@ -33,6 +33,12 @@ typedef NS_ENUM(NSUInteger, BannerAdsPosition) {
 /** Banner AD position key. Value must be NSNumber with the `BannerAdsPosition` enum. */
 extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerPostition;
 
+/** Banner AD width key. Value must be NSNumber. If you provide the `HeadsAppPlayAdOptionKeyBannerWidth` key you must provide also the `HeadsAppPlayAdOptionKeyBannerHeight` key oterwise this option will have no effect. */
+extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerWidth;
+
+/** Banner AD width key. Value must be NSNumber. If you provide the `HeadsAppPlayAdOptionKeyBannerHeight` key you must provide also the `HeadsAppPlayAdOptionKeyBannerWidth` key oterwise this option will have no effect. */
+extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerHeight;
+
 /** Fullscreen AD orientation key. Value must be NSNumber with the UIInterfaceOrientationMask. For Vungle this is the VunglePlayAdOptionKeyOrientations key. */
 extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyOrientations;
 

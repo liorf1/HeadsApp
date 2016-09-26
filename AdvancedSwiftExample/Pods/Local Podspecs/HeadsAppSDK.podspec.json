@@ -1,6 +1,6 @@
 {
   "name": "HeadsAppSDK",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "summary": "HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad Provider, to control and optimize monetization",
   "description": "HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad Provider, to control and optimize monetization\n- Work with any ad provider using a single code and change or add Ad Provides quickly and easily.\n- Communicate and test several Ad Providers simultaneously.\n- Keep your App light, even when working with multiple Ad Providers.\n- Don’t waste time recoding and re-launching every time you change ad providers.",
   "homepage": "https://headsapp-tech.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/liorf1/HeadsApp.git",
-    "tag": "0.1.0"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "7.0"

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HeadsAppSDK"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad Provider, to control and optimize monetization"
 
   s.description      = <<-DESC
