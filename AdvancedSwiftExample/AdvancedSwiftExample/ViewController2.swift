@@ -32,19 +32,19 @@ class ViewController2: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.videoAdButton2.enabled = false
-        self.bannerAdButton2.enabled = false
-        self.interstitialAdButton2.enabled = false
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoAdAvailabilityChanged:", name: Constants.kAdAvailabilityChangedNotification, object: nil)
+        self.videoAdButton2.isEnabled = false
+        self.bannerAdButton2.isEnabled = false
+        self.interstitialAdButton2.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController2.videoAdAvailabilityChanged(_:)), name: NSNotification.Name(rawValue: Constants.kAdAvailabilityChangedNotification), object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let sdk = HeadsAppSDK.sharedSDK() {
-            self.videoAdButton2.enabled = sdk.isAdPlayableForPlacementID(VIDEO_PLACEMENT_ID2)
-            self.bannerAdButton2.enabled = sdk.isAdPlayableForPlacementID(BANNER_PLACEMENT_ID2)
-            self.interstitialAdButton2.enabled = sdk.isAdPlayableForPlacementID(INTERSTITIAL_PLACEMENT_ID2)
+        if let sdk = HeadsAppSDK.shared() {
+            self.videoAdButton2.isEnabled = sdk.isAdPlayable(forPlacementID: VIDEO_PLACEMENT_ID2)
+            self.bannerAdButton2.isEnabled = sdk.isAdPlayable(forPlacementID: BANNER_PLACEMENT_ID2)
+            self.interstitialAdButton2.isEnabled = sdk.isAdPlayable(forPlacementID: INTERSTITIAL_PLACEMENT_ID2)
         }
     }
     
@@ -54,34 +54,34 @@ class ViewController2: UIViewController {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    @IBAction func requestBannerAd2(sender: UIButton) {
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(BANNER_PLACEMENT_ID2, fromViewController: self)
+    @IBAction func requestBannerAd2(_ sender: UIButton) {
+        HeadsAppSDK.shared()?.playAd(forPlacementID: BANNER_PLACEMENT_ID2, from: self)
     }
     
-    @IBAction func requestVideoAd2(sender: UIButton) {
-        let options : Dictionary = [HeadsAppPlayAdOptionKeyOrientations: UIInterfaceOrientation.Portrait.rawValue];
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(VIDEO_PLACEMENT_ID2, fromViewController: self, withOptions:options)
+    @IBAction func requestVideoAd2(_ sender: UIButton) {
+        let options : Dictionary = [HeadsAppPlayAdOptionKeyOrientations: UIInterfaceOrientation.portrait.rawValue];
+        HeadsAppSDK.shared()?.playAd(forPlacementID: VIDEO_PLACEMENT_ID2, from: self, withOptions:options)
     }
 
-    @IBAction func requestInterstitialAd2(sender: UIButton) {
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(INTERSTITIAL_PLACEMENT_ID2, fromViewController: self)
+    @IBAction func requestInterstitialAd2(_ sender: UIButton) {
+        HeadsAppSDK.shared()?.playAd(forPlacementID: INTERSTITIAL_PLACEMENT_ID2, from: self)
     }
     
     //MARK: - Video Ads buttons
     
-    func videoAdAvailabilityChanged(notification: NSNotification) {
-        if let info = notification.userInfo {
+    func videoAdAvailabilityChanged(_ notification: Notification) {
+        if let info = (notification as NSNotification).userInfo {
             if let availableNumber = info[Constants.kAdAvailableKey] as? Bool {
                 if let placementId = info[Constants.kPlacementIDKey] as? String {
                     if (placementId == VIDEO_PLACEMENT_ID2) {
-                        self.videoAdButton2.enabled = availableNumber;
+                        self.videoAdButton2.isEnabled = availableNumber;
                     } else if (placementId == BANNER_PLACEMENT_ID2) {
-                        self.bannerAdButton2.enabled = availableNumber;
+                        self.bannerAdButton2.isEnabled = availableNumber;
                     } else if (placementId == INTERSTITIAL_PLACEMENT_ID2) {
-                        self.interstitialAdButton2.enabled = availableNumber;
+                        self.interstitialAdButton2.isEnabled = availableNumber;
                     }
                 }
             }

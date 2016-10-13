@@ -30,16 +30,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func requestBannerAd(sender: UIButton) {
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(BANNER_PLACEMENT_ID, fromViewController: self)
+    @IBAction func requestBannerAd(_ sender: UIButton) {
+        HeadsAppSDK.shared()?.playAd(forPlacementID: BANNER_PLACEMENT_ID, from: self)
     }
     
-    @IBAction func requestInterstitialAd(sender: UIButton) {
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(INTERSTITIAL_PLACEMENT_ID, fromViewController: self)
+    @IBAction func requestInterstitialAd(_ sender: UIButton) {
+        HeadsAppSDK.shared()?.playAd(forPlacementID: INTERSTITIAL_PLACEMENT_ID, from: self)
     }
 
-    @IBAction func requestVideoAd(sender: UIButton) {
-        HeadsAppSDK.sharedSDK()?.playAdForPlacementID(VIDEO_PLACEMENT_ID, fromViewController: self)
+    @IBAction func requestVideoAd(_ sender: UIButton) {
+        HeadsAppSDK.shared()?.playAd(forPlacementID: VIDEO_PLACEMENT_ID, from: self)
     }
 
 

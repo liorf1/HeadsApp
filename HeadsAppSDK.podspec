@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HeadsAppSDK"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad Provider, to control and optimize monetization"
 
   s.description      = <<-DESC
@@ -32,7 +32,6 @@ HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad 
   s.ios.vendored_frameworks = 'HeadsAppSDK.framework'
   s.preserve_paths = 'HeadsAppSDK.framework'
 
-  s.frameworks = 'UIKit', 'CoreTelephony', 'AdSupport', 'CoreGraphics', 'AVFoundation', 'CoreMedia', 'QuartzCore', 'CoreMotion', 'CoreLocation'
+  s.frameworks = 'UIKit', 'CoreTelephony', 'AdSupport', 'CoreGraphics', 'AVFoundation', 'CoreMedia', 'QuartzCore', 'CoreMotion', 'CoreLocation', 'MobileCoreServices'
   s.library = 'z'
-  s.dependency 'AFNetworking', '~> 2.6.3'
 end

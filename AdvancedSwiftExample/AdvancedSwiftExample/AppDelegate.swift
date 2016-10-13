@@ -16,31 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        HeadsAppSDK.sharedSDK()?.startWithAppId(APP_ID, delegate: self)
+        HeadsAppSDK.shared()?.start(withAppId: APP_ID, delegate: self)
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
@@ -55,11 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
      * @param isVideoAdAvailable video AD is available to play. Boolean.
      * @param placementId placement ID where the AD is available.
      */
-    func headsappVideoAdPlayableChanged(isVideoAdAvailable: Bool, forPlacementID placementId: String) {
+    func headsappVideoAdPlayableChanged(_ isVideoAdAvailable: Bool, forPlacementID placementId: String) {
         print("headsappVideoAdPlayableChanged:\(isVideoAdAvailable) forPlacementID:\(placementId)");
-        print("Advertiser name: \(HeadsAppSDK.sharedSDK()?.getAdvertiserNameForPlacementID(placementId))");
+        print("Advertiser name: \(HeadsAppSDK.shared()?.getAdvertiserName(forPlacementID: placementId))");
         
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.kAdAvailabilityChangedNotification, object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey: isVideoAdAvailable])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.kAdAvailabilityChangedNotification), object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey: isVideoAdAvailable])
     }
     
     //MARK: Full Screen ADs (interstitial and video ADs)
@@ -87,9 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
      * HeadsAppAdProviderInfoKey – this object will hold any information the specific AD provider will report about view status.
      * @param willPresentProductSheet Boolean parameter denoting whether the web view or AppStore will be shown.
      */
-    func headsappSDKWillCloseAdWithViewInfo(viewInfo: [NSObject : AnyObject], willPresentProductSheet: Bool) {
+    func headsappSDKWillCloseAd(withViewInfo viewInfo: [AnyHashable: Any], willPresentProductSheet: Bool) {
         print("headsappSDKWillCloseAdWithViewInfo:\(viewInfo) willPresentProductSheet:\(willPresentProductSheet)")
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.kAdVideoClosedNotification, object: nil, userInfo: viewInfo)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.kAdVideoClosedNotification), object: nil, userInfo: viewInfo)
     }
     
     /** Product sheet is about to close – returning to the App
@@ -110,10 +110,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
      *
      * @param placementId placement ID where the AD loaded.
      */
-    func headsappSDKAdReadyForViewForPlacementID(placementId: String) {
+    func headsappSDKAdReadyForView(forPlacementID placementId: String) {
         print("headsappSDKAdReadyForViewForPlacementID:\(placementId)")
-        print("Advertiser name: \(HeadsAppSDK.sharedSDK()?.getAdvertiserNameForPlacementID(placementId))")
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.kAdAvailabilityChangedNotification, object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey: true])
+        print("Advertiser name: \(HeadsAppSDK.shared()?.getAdvertiserName(forPlacementID: placementId))")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.kAdAvailabilityChangedNotification), object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey: true])
     }
     
     /** AD will be displayed
@@ -121,9 +121,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
      * Called when the SDK is about to display the AD
      * @param placementId placement ID where the AD is available for.
      */
-    func headsappSDKAdWillDisplayForPlacementID(placementId: String) {
+    func headsappSDKAdWillDisplay(forPlacementID placementId: String) {
         print("headsappSDKAdWillDisplayForPlacementID:\(placementId)")
-        print("Advertiser name: \(HeadsAppSDK.sharedSDK()?.getAdvertiserNameForPlacementID(placementId))")
+        print("Advertiser name: \(HeadsAppSDK.shared()?.getAdvertiserName(forPlacementID: placementId))")
     }
     
     /** AD failed to be received
@@ -131,12 +131,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, HeadsAppSDKDelegate {
      * Called when the SDK has failed to load. This is used to hide the placement for better UX behavior.
      * @param placementId placement ID where the AD failed for.
      */
-    func headsappSDKAdFailedToReceiveForPlacementID(placementId: String) {
+    func headsappSDKAdFailedToReceive(forPlacementID placementId: String) {
         print("headsappSDKAdFailedToReceiveForPlacementID:\(placementId)")
-        print("Advertiser name: \(HeadsAppSDK.sharedSDK()?.getAdvertiserNameForPlacementID(placementId))")
+        print("Advertiser name: \(HeadsAppSDK.shared()?.getAdvertiserName(forPlacementID: placementId))")
         
-        if let sdk = HeadsAppSDK.sharedSDK() {
-            NSNotificationCenter.defaultCenter().postNotificationName(Constants.kAdAvailabilityChangedNotification, object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey :(sdk.isAdPlayableForPlacementID(placementId))])
+        if let sdk = HeadsAppSDK.shared() {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.kAdAvailabilityChangedNotification), object: nil, userInfo: [Constants.kPlacementIDKey: placementId, Constants.kAdAvailableKey :(sdk.isAdPlayable(forPlacementID: placementId))])
         }
     }
 }
