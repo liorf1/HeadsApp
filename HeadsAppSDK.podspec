@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HeadsAppSDK"
-  s.version          = "0.1.5"
+  s.version          = "0.1.6"
   s.summary          = "HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad Provider, to control and optimize monetization"
 
   s.description      = <<-DESC
@@ -22,7 +22,7 @@ HeadsApp lets Mobile App developers integrate a single SDK once, and use any Ad 
   s.homepage         = "https://headsapp-tech.com"
   s.license          = {
     "type"=> "Copyright",
-    "text"=> "Copyright 2016 Headsapp. All rights reserved.\n\nBy downloading the HeadsApp SDK or sample apps, you are granted a limited, non-commercial license to use and review the SDK or sample apps. If you wish to integrate the SDK into any commercial application, you must fully register an account in www.headsapp-tech.com." 
+    "text"=> "Copyright 2016 Headsapp. All rights reserved.\n\nBy downloading the HeadsApp SDK or sample apps, you are granted a limited, non-commercial license to use and review the SDK or sample apps. If you wish to integrate the SDK into any commercial application, you must fully register an account in www.headsapp-tech.com."
   }
   s.author           = { "Headsapp" => "lior@headsapp-tech.com" }
   s.source           = { :git => "https://github.com/liorf1/HeadsApp.git", :tag => s.version.to_s }
