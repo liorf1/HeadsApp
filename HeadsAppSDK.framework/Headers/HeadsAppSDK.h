@@ -30,7 +30,15 @@ typedef NS_ENUM(NSUInteger, BannerAdsPosition) {
     kBannerAdsPositionBottom
 };
 
-/** Banner AD position key. Value must be NSNumber with the `BannerAdsPosition` enum. */
+/** Banner AD position x coordinate key. Value must be NSNumber float with x coordinate in points. If you provide the `HeadsAppPlayAdOptionKeyBannerPostitionX` key you must provide also the `HeadsAppPlayAdOptionKeyBannerPostitionY`, `HeadsAppPlayAdOptionKeyBannerWidth` and `HeadsAppPlayAdOptionKeyBannerHeight` keys otherwise this option will have no effect. */
+extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerPostitionX;
+
+/** Banner AD position y coordinate key. Value must be NSNumber float with y coordinate in points. If you provide the `HeadsAppPlayAdOptionKeyBannerPostitionY` key you must provide also the `HeadsAppPlayAdOptionKeyBannerPostitionX`, `HeadsAppPlayAdOptionKeyBannerWidth` and `HeadsAppPlayAdOptionKeyBannerHeight` keys otherwise this option will have no effect. */
+extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerPostitionY;
+
+/** Banner AD position key. Value must be NSNumber with the `BannerAdsPosition` enum. 
+ * 
+ * Note that this option will have no effect if you provide all of the `HeadsAppPlayAdOptionKeyBannerPostitionX`, `HeadsAppPlayAdOptionKeyBannerPostitionY`, `HeadsAppPlayAdOptionKeyBannerWidth` and `HeadsAppPlayAdOptionKeyBannerHeight` options. You still can use this option with `HeadsAppPlayAdOptionKeyBannerWidth` and `HeadsAppPlayAdOptionKeyBannerHeight` options but if you does not provide the x and y positions. */
 extern NSString * _Nonnull const HeadsAppPlayAdOptionKeyBannerPostition;
 
 /** Banner AD width key. Value must be NSNumber. If you provide the `HeadsAppPlayAdOptionKeyBannerWidth` key you must provide also the `HeadsAppPlayAdOptionKeyBannerHeight` key oterwise this option will have no effect. */
